@@ -1,0 +1,726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D28BBC1F-439D-4346-9359-F4A663BD5794}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POS_Restaurant_Product</RootNamespace>
+    <AssemblyName>POS_Restaurant_Product</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\32px.png" />
+    <Content Include="Content\images\40px.png" />
+    <Content Include="Content\images\throbber.gif" />
+    <Content Include="Content\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\style.min.css" />
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-social.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\customstyles_en.css" />
+    <Content Include="Content\customstyles_ar.css" />
+    <Content Include="Content\customstyles.css" />
+    <Content Include="Content\dataTables.bootstrap.css" />
+    <Content Include="Content\dataTables.responsive.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fontawesome-all.min.css" />
+    <Content Include="Content\imagesCategories\item01.png" />
+    <Content Include="Content\imagesTables\table.png" />
+    <Content Include="Content\imagesTables\TI_01_Frzd.png" />
+    <Content Include="Content\imagesTables\TI_01_Off.png" />
+    <Content Include="Content\imagesTables\TI_01_On.png" />
+    <Content Include="Content\imagesTables\TI_01_Rez.png" />
+    <Content Include="Content\imagesTables\TI_02_Frzd.png" />
+    <Content Include="Content\imagesTables\TI_02_Off.png" />
+    <Content Include="Content\imagesTables\TI_02_On.png" />
+    <Content Include="Content\imagesTables\TI_02_Rez.png" />
+    <Content Include="Content\imagesTables\TI_06_Frzd.png" />
+    <Content Include="Content\imagesTables\TI_06_Off.png" />
+    <Content Include="Content\imagesTables\TI_06_On.png" />
+    <Content Include="Content\imagesTables\TI_06_Rez.png" />
+    <Content Include="Content\imagesTables\TI_08_Frzd.png" />
+    <Content Include="Content\imagesTables\TI_08_Off.png" />
+    <Content Include="Content\imagesTables\TI_08_On.png" />
+    <Content Include="Content\imagesTables\TI_08_Rez.png" />
+    <Content Include="Content\images\arrow.png" />
+    <Content Include="Content\images\default.jpg" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\Logo.jpeg" />
+    <Content Include="Content\images\Logo.png" />
+    <Content Include="Content\images\thelogo.png" />
+    <Content Include="Content\images\top_arr.png" />
+    <Content Include="Content\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\jquery-ui-dark.css" />
+    <Content Include="Content\jquery-ui-light.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery.timepicker.css" />
+    <Content Include="Content\jquery.timepicker.min.css" />
+    <Content Include="Content\keyboard.css" />
+    <Content Include="Content\metisMenu.min.css" />
+    <Content Include="Content\morris.css" />
+    <Content Include="Content\startmin.css" />
+    <Content Include="Content\spectrum.css" />
+    <Content Include="Content\timeline.css" />
+    <Content Include="Content\timepicki.css" />
+    <Content Include="fonts\cairo.css" />
+    <Content Include="fonts\DroidKufi-Regular.svg" />
+    <Content Include="fonts\fa-solid-900.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Montserrat-Bold.svg" />
+    <Content Include="fonts\Montserrat-Light.svg" />
+    <Content Include="fonts\Montserrat-Medium.svg" />
+    <Content Include="fonts\Montserrat-Regular.svg" />
+    <Content Include="fonts\OpenSans-Regular.svg" />
+    <Content Include="fonts\slick.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\Restaurant_POS_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Restaurant_POS_Model.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Restaurant_POS_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Restaurant_POS_Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\jstree.min.js" />
+    <Content Include="Scripts\arabic.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\customscripts.js" />
+    <Content Include="Scripts\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\flot-data.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.jeditable.js" />
+    <Content Include="Scripts\jquery.keyboard.js" />
+    <Content Include="Scripts\jquery.lazyload.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.timepicker.js" />
+    <Content Include="Scripts\jquery.timepicker.min.js" />
+    <Content Include="Scripts\metisMenu.min.js" />
+    <Content Include="Scripts\morris-data.js" />
+    <Content Include="Scripts\morris.min.js" />
+    <Content Include="Scripts\nicescroll.js" />
+    <Content Include="Scripts\raphael.min.js" />
+    <Content Include="Scripts\Customer.js" />
+    <Content Include="Scripts\SplitOrder.js" />
+    <Content Include="Scripts\scripts-ar.js" />
+    <Content Include="Scripts\spectrum.js" />
+    <Content Include="Scripts\startmin.js" />
+    <Content Include="Scripts\timepicki.js" />
+    <Content Include="Scripts\wow.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AreasController.cs" />
+    <Compile Include="Controllers\CacheAndCategoriesController.cs" />
+    <Compile Include="Controllers\CacheAndUserController.cs" />
+    <Compile Include="Controllers\CachesController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CompaniesController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\DeliveryStaffsController.cs" />
+    <Compile Include="Controllers\ExtraItemsController.cs" />
+    <Compile Include="Controllers\FloorsController.cs" />
+    <Compile Include="Controllers\FunctionsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Controllers\POSSetupController.cs" />
+    <Compile Include="Controllers\PrintersController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\RolePageController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\SerialsController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\SubItemsController.cs" />
+    <Compile Include="Controllers\TablesController.cs" />
+    <Compile Include="Controllers\TaxesController.cs" />
+    <Compile Include="Controllers\UnitsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AccountHelper.cs" />
+    <Compile Include="Helpers\CustomAction.cs" />
+    <Compile Include="Helpers\MyBaseController.cs" />
+    <Compile Include="Helpers\PageModels.cs" />
+    <Compile Include="Helpers\PrinterClass.cs" />
+    <Compile Include="Helpers\Printhelper.cs" />
+    <Compile Include="Helpers\RolePagesFunctions.cs" />
+    <Compile Include="Helpers\SalesHelper.cs" />
+    <Compile Include="Helpers\SiteLanguages.cs" />
+    <Compile Include="Models\Area.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cache.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cache_Categories.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cache_User.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Company.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeliveryStaff.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExtraItem.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Floor.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Function.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDailySalesReportDetails_Result.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDailySalesReport_Result.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalAndCountTableStatus_Result.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Item.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Language.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order_Table.cs" />
+    <Compile Include="Models\Page.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pages_Functions.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\POS_Setup.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Printer.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Restaurant_POS_Model.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Restaurant_POS_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Restaurant_POS_Model.cs" />
+    <Compile Include="Models\Restaurant_POS_Model.designer.cs">
+      <DependentUpon>Restaurant_POS_Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Restaurant_POS_Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role_Page.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Serial.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Service.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shift.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShiftInOut.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubItem.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdate.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Table.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tax.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Unit.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Restaurant_POS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyRoleProvider\SiteRole.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.ar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.ar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Companies\Companies.ar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Companies.ar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Companies\Companies.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Companies.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Shared\_LayoutPages.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Companies\Create.cshtml" />
+    <Content Include="Views\Companies\Delete.cshtml" />
+    <Content Include="Views\Companies\Details.cshtml" />
+    <Content Include="Views\Companies\Edit.cshtml" />
+    <Content Include="Views\Companies\Index.cshtml" />
+    <Content Include="Views\Taxes\Create.cshtml" />
+    <Content Include="Views\Taxes\Delete.cshtml" />
+    <Content Include="Views\Taxes\Details.cshtml" />
+    <Content Include="Views\Taxes\Edit.cshtml" />
+    <Content Include="Views\Taxes\Index.cshtml" />
+    <Content Include="Views\Services\Create.cshtml" />
+    <Content Include="Views\Services\Delete.cshtml" />
+    <Content Include="Views\Services\Details.cshtml" />
+    <Content Include="Views\Services\Edit.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Printers\Create.cshtml" />
+    <Content Include="Views\Printers\Delete.cshtml" />
+    <Content Include="Views\Printers\Details.cshtml" />
+    <Content Include="Views\Printers\Edit.cshtml" />
+    <Content Include="Views\Printers\Index.cshtml" />
+    <Content Include="Views\Floors\Create.cshtml" />
+    <Content Include="Views\Floors\Delete.cshtml" />
+    <Content Include="Views\Floors\Details.cshtml" />
+    <Content Include="Views\Floors\Edit.cshtml" />
+    <Content Include="Views\Floors\Index.cshtml" />
+    <Content Include="Views\Floors\GetFloors.cshtml" />
+    <Content Include="Views\Tables\Create.cshtml" />
+    <Content Include="Views\Tables\Delete.cshtml" />
+    <Content Include="Views\Tables\Details.cshtml" />
+    <Content Include="Views\Tables\Edit.cshtml" />
+    <Content Include="Views\Tables\Index.cshtml" />
+    <Content Include="Views\Floors\GetFloorsList.cshtml" />
+    <Content Include="Views\Units\Create.cshtml" />
+    <Content Include="Views\Units\Delete.cshtml" />
+    <Content Include="Views\Units\Details.cshtml" />
+    <Content Include="Views\Units\Edit.cshtml" />
+    <Content Include="Views\Units\Index.cshtml" />
+    <Content Include="Views\Tables\GetTables.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Categories\GetCategories.cshtml" />
+    <Content Include="Views\Serials\Create.cshtml" />
+    <Content Include="Views\Serials\Delete.cshtml" />
+    <Content Include="Views\Serials\Details.cshtml" />
+    <Content Include="Views\Serials\Edit.cshtml" />
+    <Content Include="Views\Serials\Index.cshtml" />
+    <Content Include="Views\Items\Delete.cshtml" />
+    <Content Include="Views\Items\Details.cshtml" />
+    <Content Include="Views\Items\Edit.cshtml" />
+    <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Categories\GetCategoriesList.cshtml" />
+    <Content Include="Views\Items\GetItems.cshtml" />
+    <Content Include="Views\ExtraItems\Create.cshtml" />
+    <Content Include="Views\ExtraItems\Delete.cshtml" />
+    <Content Include="Views\ExtraItems\Details.cshtml" />
+    <Content Include="Views\ExtraItems\Edit.cshtml" />
+    <Content Include="Views\ExtraItems\Index.cshtml" />
+    <Content Include="Views\Items\GetItemsList.cshtml" />
+    <Content Include="Views\ExtraItems\GetExtraItems.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Pages\Create.cshtml" />
+    <Content Include="Views\Pages\Delete.cshtml" />
+    <Content Include="Views\Pages\Details.cshtml" />
+    <Content Include="Views\Pages\Edit.cshtml" />
+    <Content Include="Views\Pages\Index.cshtml" />
+    <Content Include="Views\Permissions\Create.cshtml" />
+    <Content Include="Views\Permissions\Delete.cshtml" />
+    <Content Include="Views\Permissions\Details.cshtml" />
+    <Content Include="Views\Permissions\Edit.cshtml" />
+    <Content Include="Views\Permissions\Index.cshtml" />
+    <Content Include="Views\Permissions\GetAllPagesAndPermissionsByUserID.cshtml" />
+    <Content Include="Views\Caches\Create.cshtml" />
+    <Content Include="Views\Caches\Delete.cshtml" />
+    <Content Include="Views\Caches\Details.cshtml" />
+    <Content Include="Views\Caches\Edit.cshtml" />
+    <Content Include="Views\Caches\Index.cshtml" />
+    <Content Include="Views\CacheAndUser\Create.cshtml" />
+    <Content Include="Views\CacheAndUser\Delete.cshtml" />
+    <Content Include="Views\CacheAndUser\Details.cshtml" />
+    <Content Include="Views\CacheAndUser\Edit.cshtml" />
+    <Content Include="Views\CacheAndUser\Index.cshtml" />
+    <Content Include="Views\CacheAndCategories\Create.cshtml" />
+    <Content Include="Views\CacheAndCategories\Delete.cshtml" />
+    <Content Include="Views\CacheAndCategories\Details.cshtml" />
+    <Content Include="Views\CacheAndCategories\Edit.cshtml" />
+    <Content Include="Views\CacheAndCategories\Index.cshtml" />
+    <Content Include="Views\Areas\Create.cshtml" />
+    <Content Include="Views\Areas\Delete.cshtml" />
+    <Content Include="Views\Areas\Details.cshtml" />
+    <Content Include="Views\Areas\Edit.cshtml" />
+    <Content Include="Views\Areas\Index.cshtml" />
+    <Content Include="Views\DeliveryStaffs\Create.cshtml" />
+    <Content Include="Views\DeliveryStaffs\Delete.cshtml" />
+    <Content Include="Views\DeliveryStaffs\Details.cshtml" />
+    <Content Include="Views\DeliveryStaffs\Edit.cshtml" />
+    <Content Include="Views\DeliveryStaffs\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutSales.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
+    <Content Include="fonts\DroidKufi-Regular.eot" />
+    <Content Include="fonts\DroidKufi-Regular.ttf" />
+    <Content Include="fonts\DroidKufi-Regular.woff" />
+    <Content Include="fonts\fa-solid-900.eot" />
+    <Content Include="fonts\fa-solid-900.ttf" />
+    <Content Include="fonts\fa-solid-900.woff" />
+    <Content Include="fonts\fa-solid-900.woff2" />
+    <Content Include="fonts\Montserrat-Bold.otf" />
+    <Content Include="fonts\Montserrat-Bold.ttf" />
+    <Content Include="fonts\Montserrat-Bold.woff" />
+    <Content Include="fonts\Montserrat-Light.otf" />
+    <Content Include="fonts\Montserrat-Light.ttf" />
+    <Content Include="fonts\Montserrat-Light.woff" />
+    <Content Include="fonts\Montserrat-Medium.otf" />
+    <Content Include="fonts\Montserrat-Medium.ttf" />
+    <Content Include="fonts\Montserrat-Medium.woff" />
+    <Content Include="fonts\Montserrat-Regular.otf" />
+    <Content Include="fonts\Montserrat-Regular.ttf" />
+    <Content Include="fonts\Montserrat-Regular.woff" />
+    <Content Include="fonts\OpenSans-Regular.eot" />
+    <Content Include="fonts\OpenSans-Regular.ttf" />
+    <Content Include="fonts\OpenSans-Regular.woff" />
+    <Content Include="fonts\slick.eot" />
+    <Content Include="fonts\slick.ttf" />
+    <Content Include="fonts\slick.woff" />
+    <Content Include="Views\Sales\GetCategoriesByCacheID.cshtml" />
+    <Content Include="Views\Sales\GetItemsByCategoryID.cshtml" />
+    <Content Include="Views\Sales\TableIndex.cshtml" />
+    <Content Include="Views\Sales\CustomerIndex.cshtml" />
+    <EntityDeploy Include="Models\Restaurant_POS_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Restaurant_POS_Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Restaurant_POS_Model.edmx.diagram">
+      <DependentUpon>Restaurant_POS_Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="App_Code\MyHelpers.cshtml" />
+    <Content Include="fonts\SLXGc1nY6HkvalIkTpu0xg.woff2" />
+    <Content Include="fonts\SLXGc1nY6HkvalIhTps.woff2" />
+    <Content Include="fonts\SLXGc1nY6HkvalIvTpu0xg.woff2" />
+    <None Include="Properties\PublishProfiles\POS.pubxml" />
+    <Content Include="Views\Printers\ConnectPrinterswithserials.cshtml" />
+    <Content Include="Views\Sales\GetTablesByFloorID.cshtml" />
+    <Content Include="Views\Reports\SummaryDailySalesReportResult.cshtml" />
+    <Content Include="Views\Reports\DetailedInvoiceSalesReportResult.cshtml" />
+    <Content Include="Views\Reports\ReportByItems.cshtml" />
+    <Content Include="Views\Reports\ReportByItemsResult.cshtml" />
+    <Content Include="Views\Reports\SummaryInvoiceSalesReport.cshtml" />
+    <Content Include="Views\Reports\SummaryDailySalesReport.cshtml" />
+    <Content Include="Views\Reports\DetailedInvoiceSalesReport.cshtml" />
+    <Content Include="Views\Reports\SummaryInvoiceSalesReportResult.cshtml" />
+    <Content Include="Views\POSSetup\Create.cshtml" />
+    <Content Include="Views\POSSetup\Delete.cshtml" />
+    <Content Include="Views\POSSetup\Details.cshtml" />
+    <Content Include="Views\POSSetup\Edit.cshtml" />
+    <Content Include="Views\POSSetup\Index.cshtml" />
+    <Content Include="Views\ExtraItems\TreeView.cshtml" />
+    <Content Include="Views\SubItems\Index.cshtml" />
+    <Content Include="Views\SubItems\TreeView.cshtml" />
+    <Content Include="Views\SubItems\TreeViewSales.cshtml" />
+    <Content Include="Views\ExtraItems\TreeViewSales.cshtml" />
+    <Content Include="Views\Sales\SplitOrder.cshtml" />
+    <Content Include="Views\Shared\_LayoutSplitOrder.cshtml" />
+    <Content Include="Views\Categories\TreeView.cshtml" />
+    <Content Include="Views\Categories\Drop.cshtml" />
+    <Content Include="Views\Categories\Editcategory.cshtml" />
+    <Content Include="Views\Items\Create.cshtml" />
+    <Content Include="Views\Reports\TreeView.cshtml" />
+    <Content Include="Views\Pages\GetPages.cshtml" />
+    <Content Include="Views\Functions\Create.cshtml" />
+    <Content Include="Views\Functions\Delete.cshtml" />
+    <Content Include="Views\Functions\Details.cshtml" />
+    <Content Include="Views\Functions\Edit.cshtml" />
+    <Content Include="Views\Functions\Index.cshtml" />
+    <Content Include="Views\RolePage\Create.cshtml" />
+    <Content Include="Views\RolePage\Delete.cshtml" />
+    <Content Include="Views\RolePage\Details.cshtml" />
+    <Content Include="Views\RolePage\Edit.cshtml" />
+    <Content Include="Views\RolePage\Index.cshtml" />
+    <Content Include="Scripts\Arabic.json" />
+    <None Include="Views\Pages\GetPagesRoles.cshtml" />
+    <Content Include="Views\Sales\PendingOrders.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\imagesItems\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.ar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Companies\Companies.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Companies.ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Companies\Companies.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Companies.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9221</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9221/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
